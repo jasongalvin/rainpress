@@ -13,4 +13,6 @@ Echoe.new('rainpress') do |p|
 
   p.test_pattern = 'spec/*_spec.rb'
   p.rcov_options = ['--exclude \/Library\/Ruby\/Gems,spec\/', '--xrefs']
+
+  p.retain_gemspec = true
 end
