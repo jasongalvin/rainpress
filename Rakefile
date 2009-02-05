@@ -1,18 +1,15 @@
-require 'echoe'
-require 'hanna/rdoctask'
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |s|
+    s.name = 'rainpress'
+    s.summary = 'README'
+    s.email = 'sprsquish@gmail.com'
+    s.homepage = 'http://github.com/sprsquish/rainpress'
+    s.description = 'README'
+    s.authors = ['Uwe L. Korn', 'Jeff Smick']
 
-Echoe.new('rainpress') do |p|
-  p.author = ['Uwe L. Korn', 'Jeff Smick']
-  p.email = 'sprsquish@gmail.com'
-  p.url = 'http://github.com/sprsquish/rainpress/tree/master'
-
-  p.project = 'squishtech'
-  p.summary = 'A CSS compressor'
-
-  p.rdoc_options += %w[-S -T hanna --main README.rdoc --exclude autotest]
-
-  p.test_pattern = 'spec/*_spec.rb'
-  p.rcov_options = ['--exclude \/Library\/Ruby\/Gems,spec\/', '--xrefs']
-
-  p.retain_gemspec = true
+    s.files = FileList['init.rb', "[A-Z]*.*", "{bin,generators,lib,test,spec}/**/*"]
+  end
+rescue LoadError
+  puts 'Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com'
 end
